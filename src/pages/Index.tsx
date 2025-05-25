@@ -186,10 +186,13 @@ const Index = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{post.readTime}</span>
-                    <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium group/btn">
+                    <Link 
+                      to={`/post/${post.id}`}
+                      className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium group/btn"
+                    >
                       Oku
                       <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

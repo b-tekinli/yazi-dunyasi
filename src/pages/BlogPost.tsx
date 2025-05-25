@@ -184,7 +184,7 @@ XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik
                         const match = /language-(\w+)/.exec(className || '');
                         return match ? (
                           <SyntaxHighlighter
-                            style={oneDark}
+                            style={oneDark as any}
                             language={match[1]}
                             PreTag="div"
                             {...rest}
