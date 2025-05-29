@@ -17,37 +17,149 @@ const BlogPost = () => {
   // Blog yazısı meta bilgileri
   const posts = {
     "1": {
-      title: "Web Uygulamalarında XSS Saldırıları ve Korunma Yöntemleri",
-      category: "Web Application Security",
-      date: "2024-01-15",
-      author: "Sen",
-      readTime: "8 dakika",
-      file: "xss.md"
+      title: "Network",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-08-25",
+      author: "sudosuzroot",
+      readTime: "19 dakika",
+      file: "network.md"
     },
     "2": {
-      title: "Modern Frontend Geliştirmede React Hooks Kullanımı",
-      category: "Frontend Tech",
-      date: "2024-01-10",
-      author: "Sen",
-      readTime: "12 dakika",
-      file: "react-hooks.md"
+      title: "Web Uygulama Güvenliği - Temel Kavramlar",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-08-28",
+      author: "sudosuzroot",
+      readTime: "9 dakika",
+      file: "web_uygulama_guvenligi_temel_kavramlar.md"
     },
     "3": {
-      title: "SQL Injection Saldırıları ve Önleme Teknikleri",
-      category: "Web Application Security",
-      date: "2024-01-05",
-      author: "Sen",
-      readTime: "10 dakika",
-      file: "sql-injection.md"
+      title: "Insecure Deserialization",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-10-17",
+      author: "sudosuzroot",
+      readTime: "4 dakika",
+      file: "insecure_deserialization.md"
     },
     "4": {
-      title: "TypeScript ile Type-Safe React Uygulamaları",
-      category: "Frontend Tech",
-      date: "2024-01-01",
-      author: "Sen",
-      readTime: "15 dakika",
-      file: "typescript-react.md"
-    }
+      title: "Bir web sitesine gitmek istediğimizde neler oluyor?",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-11-13",
+      author: "sudosuzroot",
+      readTime: "11 dakika",
+      file: "bir_web_sitesine_gitmek_istediğimizde_neler_oluyor.md"
+    },
+    "5": {
+      title: "SSL ve TLS Nedir? Nerelerde Kullanırız?",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-02-28",
+      author: "sudosuzroot",
+      readTime: "5 dakika",
+      file: "ssl_ve_tls_nedir.md"
+    },
+    "6": {
+      title: "Array ve Linked List Arasındaki Farklar",
+      category: "Data Structures",
+      date: "2022-04-03",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "array_linked_list_arasindaki_farklar.md"
+    },
+    "7": {
+      title: "Stack ve Queue Nedir?",
+      category: "Data Structures",
+      date: "2022-04-03",
+      author: "sudosuzroot",
+      readTime: "2 dakika",
+      file: "stack_ve_queue_nedir.md"
+    },
+    "8": {
+      title: "Hash Table",
+      category: "Data Structures",
+      date: "2022-04-04",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "hash_table.md"
+    },
+    "9": {
+      title: "Access Control Vulnerabilities — PortSwigger",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-09-30",
+      author: "sudosuzroot",
+      readTime: "11 dakika",
+      file: "access_control_vulnerabilities.md"
+    },
+    "10": {
+      title: "Authentication Vulnerabilities — PortSwigger",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-10-10",
+      author: "sudosuzroot",
+      readTime: "17 dakika",
+      file: "authentication_vulnerabilities.md"
+    },
+    "11": {
+      title: "SQL Injection — PortSwigger",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-11-05",
+      author: "sudosuzroot",
+      readTime: "23 dakika",
+      file: "sql_injection.md"
+    },
+    "12": {
+      title: "Medium’a Kod Bloğu Eklemek",
+      category: "Other Tech",
+      date: "2022-04-09",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "mediuma_kod_blogu_eklemek.md"
+    },
+    "13": {
+      title: "Google'da Etkili Arama Yapmak",
+      category: "Other Tech",
+      date: "2022-03-31",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "googleda_etkili_arama_yapmak.md"
+    },
+    "14": {
+      title: "C Programlama",
+      category: "Other Tech",
+      date: "2022-05-14",
+      author: "sudosuzroot",
+      readTime: "9 dakika",
+      file: "c_programlama.md"
+    },
+    "15": {
+      title: "PWA (Progressive Web App)",
+      category: "Other Tech",
+      date: "2024-07-15",
+      author: "sudosuzroot",
+      readTime: "2 dakika",
+      file: "pwa.md"
+    },
+    "16": {
+      title: "OS Systems",
+      category: "Other Tech",
+      date: "2024-07-05",
+      author: "sudosuzroot",
+      readTime: "6 dakika",
+      file: "os_systems.md"
+    },
+    "17": {
+      title: "Gömülü Sistem Notlarım",
+      category: "Other Tech",
+      date: "2024-05-29",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "gomulu_sistem_notlari.md"
+    },
+    "18": {
+      title: "JavaScript ve React Mülakat Soruları",
+      category: "Other Tech",
+      date: "2024-05-30",
+      author: "sudosuzroot",
+      readTime: "16 dakika",
+      file: "js_ve_react_mulakat_sorulari.md"
+    },
   };
 
   const post = posts[id as keyof typeof posts];
@@ -80,7 +192,7 @@ const BlogPost = () => {
 
   const getCategoryColor = (category: string) => {
     switch(category) {
-      case "Web Application Security":
+      case "Web Uygulama Güvenliği ve Bug Bounty":
         return "bg-red-100 text-red-800";
       case "Frontend Tech":
         return "bg-blue-100 text-blue-800";
@@ -112,7 +224,7 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Kişisel Blog
+              Yazı Gezegeni
             </motion.h1>
             <nav className="flex gap-6">
               <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>

@@ -21,43 +21,172 @@ const Index = () => {
   const [posts] = useState<BlogPost[]>([
     {
       id: "1",
-      title: "Web Uygulamalarında XSS Saldırıları ve Korunma Yöntemleri",
-      excerpt: "Cross-Site Scripting (XSS) saldırıları web güvenliğinin en yaygın tehditlerinden biridir. Bu yazıda XSS türleri ve korunma yöntemlerini inceleyeceğiz.",
-      category: "Web Application Security",
-      date: "2024-01-15",
-      author: "Sen",
-      readTime: "8 dakika"
+      title: "Network",
+      excerpt: "CCNA düzeyinde genel network bilgisi içerir.",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-08-25",
+      author: "sudosuzroot",
+      readTime: "En az 19 dakika okuma süresinde"
     },
     {
-      id: "2", 
-      title: "Modern Frontend Geliştirmede React Hooks Kullanımı",
-      excerpt: "React Hooks ile fonksiyonel bileşenlerde state yönetimi ve yan etkilerin nasıl kullanılacağını öğrenin. useState, useEffect ve custom hook'lar.",
-      category: "Frontend Tech",
-      date: "2024-01-10",
-      author: "Sen",
-      readTime: "12 dakika"
+      id: "2",
+      title: "Web Uygulama Güvenliği - Temel Kavramlar",
+      excerpt: "Web uygulama güvenliğine yeni başlayanlar için idealdir.",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-08-28",
+      author: "sudosuzroot",
+      readTime: "En az 9 dakika okuma süresinde"
     },
     {
       id: "3",
-      title: "SQL Injection Saldırıları ve Önleme Teknikleri",
-      excerpt: "Veritabanı güvenliğinin temel taşlarından biri olan SQL Injection saldırılarını anlayın ve etkili korunma yöntemlerini öğrenin.",
-      category: "Web Application Security", 
-      date: "2024-01-05",
-      author: "Sen",
-      readTime: "10 dakika"
+      title: "Insecure Deserialization",
+      excerpt: "Insecure deserialization zafiyetini konu alır.",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-10-17",
+      author: "sudosuzroot",
+      readTime: "En az 4 dakika okuma süresinde"
     },
     {
       id: "4",
-      title: "TypeScript ile Type-Safe React Uygulamaları",
-      excerpt: "TypeScript kullanarak React uygulamalarınızı daha güvenli hale getirin. Interface'ler, generic'ler ve type guards.",
-      category: "Frontend Tech",
-      date: "2024-01-01",
-      author: "Sen", 
-      readTime: "15 dakika"
-    }
+      title: "Bir web sitesine gitmek istediğimizde neler oluyor?",
+      excerpt: "Web sitesine giderken arkada olan tüüüm her şeyi içerir.",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-11-13",
+      author: "sudosuzroot",
+      readTime: "En az 11 dakika okuma süresinde"
+    },
+    {
+      id: "5",
+      title: "SSL ve TLS Nedir? Nerelerde Kullanırız?",
+      excerpt: "SSL ve TLS'in ne olduğuna dair ve nerelerde kullanılacağına dair bazı bilgiler.",
+      category: "Web Uygulama Güvenliği ve Bug Bounty",
+      date: "2024-02-28",
+      author: "sudosuzroot",
+      readTime: "En az 5 dakika okuma süresinde"
+    },
+    {
+      id: "6",
+      title: "Array ve Linked List Arasındaki Farklar",
+      excerpt: "Array ve linked list farkını anlatan bir yazı.",
+      category: "Data Structures",
+      date: "2022-04-02",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "7",
+      title: "Stack ve Queue Nedir?",
+      excerpt: "Stack ve Queue hakkında ufak bir yazı.",
+      category: "Data Structures",
+      date: "2022-04-03",
+      author: "sudosuzroot",
+      readTime: "En az 2 dakika okuma süresinde"
+    },
+    {
+      id: "8",
+      title: "Hash Table",
+      excerpt: "Hash Table ve Hash Collection'a değinilmiş minik bir yazı.",
+      category: "Data Structures",
+      date: "2022-04-04",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "9",
+      title: "Access Control Vulnerabilities — PortSwigger",
+      excerpt: "PortSwigger üzerindeki Access Control Vulnerabilities başlıklı tüm lab’lar için write-up.",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-09-30",
+      author: "sudosuzroot",
+      readTime: "En az 11 dakika okuma süresinde"
+    },
+    {
+      id: "10",
+      title: "Authentication Vulnerabilities — PortSwigger",
+      excerpt: "PortSwigger üzerindeki Authentication Vulnerabilities başlıklı tüm lab’lar için write-up.",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-10-10",
+      author: "sudosuzroot",
+      readTime: "En az 17 dakika okuma süresinde"
+    },
+    {
+      id: "11",
+      title: "SQL Injection — PortSwigger",
+      excerpt: "PortSwigger üzerindeki SQL Injection başlıklı tüm lab’lar için write-up.",
+      category: "PortSwigger - Lab (CTF)",
+      date: "2024-11-05",
+      author: "sudosuzroot",
+      readTime: "En az 23 dakika okuma süresinde"
+    },
+    {
+      id: "12",
+      title: "Medium’a Kod Bloğu Eklemek",
+      excerpt: "Github üzerinden kod bloğunun nasıl ekleneceğini öğrenebilirsiniz.",
+      category: "Other Tech",
+      date: "2022-04-09",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "13",
+      title: "Google'da Etkili Arama Yapmak",
+      excerpt: "Google dorking anlatımı içerir.",
+      category: "Other Tech",
+      date: "2022-03-31",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "14",
+      title: "C Programlama",
+      excerpt: "C 101",
+      category: "Other Tech",
+      date: "2022-05-14",
+      author: "sudosuzroot",
+      readTime: "En az 9 dakika okuma süresinde"
+    },
+    {
+      id: "15",
+      title: "PWA (Progressive Web App)",
+      excerpt: "Web sitelerinin bir mobil uygulama gibi kullanılabilmesini sağlayan teknoloji.",
+      category: "Other Tech",
+      date: "2024-07-15",
+      author: "sudosuzroot",
+      readTime: "En az 2 dakika okuma süresinde"
+    },
+    {
+      id: "16",
+      title: "OS Systems",
+      excerpt: "Kendimi geliştirmek için İngilizce yazdığım bir yazı.",
+      category: "Other Tech",
+      date: "2024-07-05",
+      author: "sudosuzroot",
+      readTime: "En az 6 dakika okuma süresinde"
+    },
+    {
+      id: "17",
+      title: "Gömülü Sistem Notlarım",
+      excerpt: "Kendimi geliştirmek için gömülü sistem üzerine çalışırken yazdığım bir yazı.",
+      category: "Other Tech",
+      date: "2024-05-29",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "18",
+      title: "JavaScript ve React Mülakat Soruları",
+      excerpt: "Mülakatlara çalışırken aldığım notlar.",
+      category: "Other Tech",
+      date: "2024-05-30",
+      author: "sudosuzroot",
+      readTime: "En az 16 dakika okuma süresinde"
+    },
   ]);
 
-  const categories = ["Tümü", "Web Application Security", "Frontend Tech"];
+
+
+
+  const categories = ["Tümü", "Web Uygulama Güvenliği ve Bug Bounty", "Siber Güvenlik", "SOC - Blue Team", "PortSwigger - Lab (CTF)", "Frontend Tech", "Next.js", "React.js", "JavaScript ve TypeScript", "Backend Tech", "Devops", "Database Tech", "Data Structures", "Git (VCS)", "IOS", "Other Tech"];
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
 
   const filteredPosts = selectedCategory === "Tümü" 
@@ -66,12 +195,38 @@ const Index = () => {
 
   const getCategoryColor = (category: string) => {
     switch(category) {
-      case "Web Application Security":
+      case "Web Uygulama Güvenliği ve Bug Bounty":
         return "bg-red-100 text-red-800 hover:bg-red-200";
-      case "Frontend Tech":
+      case "Siber Güvenlik":
+        return "bg-cyan-100 text-cyan-800 hover:bg-cyan-200";
+      case "SOC - Blue Team":
         return "bg-blue-100 text-blue-800 hover:bg-blue-200";
-      default:
+      case "PortSwigger - Lab (CTF)":
+        return "bg-orange-100 text-orange-800 hover:bg-orange-200";
+      case "Frontend Tech":
+        return "bg-pink-100 text-pink-800 hover:bg-pink-200";
+      case "Next.js":
+        return "bg-black-100 text-black-800 hover:bg-black-200";
+      case "React.js":
+        return "bg-sky-100 text-sky-800 hover:bg-sky-200";
+      case "JavaScript ve TypeScript":
+        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-200";
+      case "Backend Tech":
+        return "bg-purple-100 text-purple-800 hover:bg-purple-200";
+      case "Devops":
+        return "bg-rose-100 text-rose-800 hover:bg-rose-200";
+      case "Database Tech":
+        return "bg-emerald-100 text-emerald-800 hover:bg-emerald-200";
+      case "Data Structures":
+        return "bg-green-100 text-green-800 hover:bg-green-200";
+      case "Git (VCS)":
+        return "bg-indigo-100 text-indigo-800 hover:bg-indigo-200";
+      case "IOS":
+        return "bg-zinc-100 text-zinc-800 hover:bg-zinc-200";
+      case "Other Tech":
         return "bg-gray-100 text-gray-800 hover:bg-gray-200";
+      default:
+        return "bg-neutral-100 text-neutral-800 hover:bg-neutral-200";
     }
   };
 
@@ -86,7 +241,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Kişisel Blog
+              Yazı Gezegeni
             </motion.h1>
             <nav className="flex gap-6">
               <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
@@ -108,7 +263,7 @@ const Index = () => {
             Teknoloji ve Güvenlik Üzerine
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Web uygulama güvenliği ve modern frontend teknolojileri hakkında yazılar paylaşıyorum.
+            Öğrendiğim tüm konu ve teknolojiler hakkında yazılar paylaşıyorum.
           </p>
         </motion.div>
       </section>
@@ -205,7 +360,7 @@ const Index = () => {
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2024 Kişisel Blog. Tüm hakları saklıdır.
+            © 2025 Yazı Gezegeni. Tüm hakları saklıdır.
           </p>
         </div>
       </footer>

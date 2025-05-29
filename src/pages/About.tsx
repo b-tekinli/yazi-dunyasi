@@ -7,7 +7,7 @@ import { Code, Shield, Laptop, Coffee } from "lucide-react";
 const About = () => {
   const skills = [
     { name: "Web Application Security", icon: Shield, color: "text-red-500" },
-    { name: "React & TypeScript", icon: Code, color: "text-blue-500" },
+    { name: "JavaScript & TypeScript", icon: Code, color: "text-blue-500" },
     { name: "Frontend Development", icon: Laptop, color: "text-green-500" },
     { name: "Modern Web Technologies", icon: Coffee, color: "text-purple-500" }
   ];
@@ -23,7 +23,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Kişisel Blog
+              Yazı Gezegeni
             </motion.h1>
             <nav className="flex gap-6">
               <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</a>
@@ -48,14 +48,13 @@ const About = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center"
             >
-              <span className="text-4xl font-bold text-white">B</span>
+              <span className="text-4xl font-bold text-white">BT</span>
             </motion.div>
             <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
-              Merhaba, Ben Blog Yazarıyım
+              Merhaba, ben Beyza
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Web uygulama güvenliği ve modern frontend teknolojileri konularında yazılar yazıyorum. 
-              Amacım, karmaşık teknik konuları anlaşılır bir şekilde paylaşmak.
+              Amacım, teknik konuları anlaşılır bir şekilde paylaşmak.
             </p>
           </div>
 
