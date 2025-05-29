@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { useState, useEffect } from "react";
 
 const BlogPost = () => {
