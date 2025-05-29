@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowLeft, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState, useEffect } from "react";
 
 const BlogPost = () => {
@@ -307,7 +307,7 @@ const BlogPost = () => {
                           const match = /language-(\w+)/.exec(className || '');
                           return match ? (
                             <SyntaxHighlighter
-                              style={oneDark}
+                              style={tomorrow}
                               language={match[1]}
                               PreTag="div"
                               customStyle={{
