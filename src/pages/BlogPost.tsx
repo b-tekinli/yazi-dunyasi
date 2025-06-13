@@ -22,7 +22,7 @@ const BlogPost = () => {
       date: "2024-08-25",
       author: "sudosuzroot",
       readTime: "19 dakika",
-      file: "network.md"
+      file: "../posts/network.md"
     },
     "2": {
       title: "Web Uygulama Güvenliği - Temel Kavramlar",
@@ -172,7 +172,7 @@ const BlogPost = () => {
       }
 
       try {
-        const response = await fetch(`/src/posts/${post.file}`);
+        const response = await fetch(`/posts/${post.file}`);
         if (response.ok) {
           const content = await response.text();
           setMarkdownContent(content);
