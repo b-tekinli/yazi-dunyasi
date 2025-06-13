@@ -1,3 +1,10 @@
+---
+layout: none #
+render_with_liquid: false
+---
+
+# İçerik buradan sonra
+
 C Programlama
 =============
 
@@ -256,9 +263,7 @@ printf(“%d”, sayi\[4\]); // Çıktı: 12
 **Örnek:** int sayi\[2\]\[3\];
 
 Çok boyutlu dizi tanımlarken sonsuz uzunlukta bir matris gibi tanımlayabiliriz.
-{% raw %}
 **_Örnek:_** `sonsuzDizi\[\]\[3\] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};`
-{% endraw %}
 
 **Karakter Dizileri**
 
