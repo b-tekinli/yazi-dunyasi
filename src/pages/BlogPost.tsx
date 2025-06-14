@@ -224,7 +224,7 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Yazı Dünyası
+              <Link to="/">Yazı Dünyası</Link>
             </motion.h1>
             <nav className="flex gap-6">
               <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
