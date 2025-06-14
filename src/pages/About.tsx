@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Shield, Laptop, Coffee } from "lucide-react";
+import { Code, Shield, Laptop, Coffee, Link } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -23,7 +23,7 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Yazı Dünyası
+              <Link to="/">Yazı Dünyası</Link>
             </motion.h1>
             <nav className="flex gap-6">
               <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</a>
