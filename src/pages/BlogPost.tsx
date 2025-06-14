@@ -22,7 +22,7 @@ const BlogPost = () => {
       date: "2024-08-25",
       author: "sudosuzroot",
       readTime: "19 dakika",
-      file: "/posts/network.md"
+      file: "network.md"
     },
     "2": {
       title: "Web Uygulama Güvenliği - Temel Kavramlar",
@@ -172,7 +172,7 @@ const BlogPost = () => {
       }
 
       try {
-        const response = await fetch(`/posts/${post.file}`);
+        const response = await fetch(`/assets/posts/${post.file}`);
         if (response.ok) {
           const content = await response.text();
           setMarkdownContent(content);
@@ -227,7 +227,7 @@ const BlogPost = () => {
               Yazı Dünyası
             </motion.h1>
             <nav className="flex gap-6">
-              <Link to="/yazi-dunyasi/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
+              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
               <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">Hakkımda</Link>
             </nav>
           </div>
