@@ -23,10 +23,10 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Yazı Gezegeni
+              Yazı Dünyası
             </motion.h1>
             <nav className="flex gap-6">
-              <a href="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</a>
+              <a href="/yazi-dunyasi/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</a>
               <a href="/about" className="text-blue-600 font-medium">Hakkımda</a>
             </nav>
           </div>

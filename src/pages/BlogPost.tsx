@@ -207,7 +207,7 @@ const BlogPost = () => {
         <Card className="p-8 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Yazı Bulunamadı</h1>
           <p className="text-gray-600 mb-4">Aradığınız blog yazısı mevcut değil.</p>
-          <Link to="/" className="text-blue-600 hover:text-blue-800">Ana Sayfaya Dön</Link>
+          <Link to="/yazi-dunyasi/" className="text-blue-600 hover:text-blue-800">Ana Sayfaya Dön</Link>
         </Card>
       </div>
     );
@@ -224,10 +224,10 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Yazı Gezegeni
+              Yazı Dünyası
             </motion.h1>
             <nav className="flex gap-6">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
+              <Link to="/yazi-dunyasi/" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</Link>
               <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">Hakkımda</Link>
             </nav>
           </div>
