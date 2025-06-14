@@ -22,7 +22,7 @@ const BlogPost = () => {
       date: "2024-08-25",
       author: "sudosuzroot",
       readTime: "19 dakika",
-      file: "../posts/network.md"
+      file: "/posts/network.md"
     },
     "2": {
       title: "Web Uygulama Güvenliği - Temel Kavramlar",
