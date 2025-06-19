@@ -172,7 +172,8 @@ const BlogPost = () => {
       }
 
       try {
-        const response = await fetch(`/assets/posts/${post.file}`);
+        const response = await fetch(`/yazi-dunyasi/assets/posts/${post.file}`);
+        
         if (response.ok) {
           const content = await response.text();
           setMarkdownContent(content);
