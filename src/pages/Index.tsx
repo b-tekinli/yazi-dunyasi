@@ -181,6 +181,51 @@ const Index = () => {
       author: "sudosuzroot",
       readTime: "En az 16 dakika okuma süresinde"
     },
+    {
+      id: "19",
+      title: "Log Management",
+      excerpt: "Log log log 5651",
+      category: "SOC - Blue Team",
+      date: "2024-09-22",
+      author: "sudosuzroot",
+      readTime: "En az 5 dakika okuma süresinde"
+    },
+    {
+      id: "20",
+      title: "MITRE ATT&CK Framework",
+      excerpt: "Taktik, teknik, prosedür",
+      category: "SOC - Blue Team",
+      date: "2024-09-16",
+      author: "sudosuzroot",
+      readTime: "En az 6 dakika okuma süresinde"
+    },
+    {
+      id: "21",
+      title: "Sysmon Nedir?",
+      excerpt: "Windows log aracı!",
+      category: "SOC - Blue Team",
+      date: "2024-11-08",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
+    {
+      id: "22",
+      title: "Docker Nedir?",
+      excerpt: "containerr",
+      category: "Devops",
+      date: "2023-12-08",
+      author: "sudosuzroot",
+      readTime: "En az 10 dakika okuma süresinde"
+    },
+    {
+      id: "23",
+      title: "Kubernetes",
+      excerpt: "K8s",
+      category: "Devops",
+      date: "2024-02-08",
+      author: "sudosuzroot",
+      readTime: "En az 4 dakika okuma süresinde"
+    },
   ]);
 
 

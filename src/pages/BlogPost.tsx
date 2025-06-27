@@ -160,6 +160,46 @@ const BlogPost = () => {
       readTime: "16 dakika",
       file: "js_ve_react_mulakat_sorulari.md"
     },
+    "19": {
+      title: "Log Management",
+      category: "SOC - Blue Team",
+      date: "2024-09-22",
+      author: "sudosuzroot",
+      readTime: "5 dakika",
+      file: "log_management.md"
+    },
+    "20": {
+      title: "MITRE ATT&CK Framework",
+      category: "SOC - Blue Team",
+      date: "2024-09-16",
+      author: "sudosuzroot",
+      readTime: "6 dakika",
+      file: "mitre_attack_framework.md"
+    },
+    "21": {
+      title: "Sysmon Nedir?",
+      category: "SOC - Blue Team",
+      date: "2024-11-08",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "sysmon_nedir.md"
+    },
+    "22": {
+      title: "Docker Nedir?",
+      category: "Devops",
+      date: "2023-12-08",
+      author: "sudosuzroot",
+      readTime: "10 dakika",
+      file: "docker_nedir.md"
+    },
+    "23": {
+      title: "Kubernetes",
+      category: "Devops",
+      date: "2024-02-08",
+      author: "sudosuzroot",
+      readTime: "4 dakika",
+      file: "kubernetes.md"
+    },
   };
 
   const post = posts[id as keyof typeof posts];
