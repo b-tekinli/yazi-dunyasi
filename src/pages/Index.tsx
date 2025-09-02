@@ -226,6 +226,24 @@ const Index = () => {
       author: "sudosuzroot",
       readTime: "En az 4 dakika okuma süresinde"
     },
+    {
+      id: "24",
+      title: "GIT Nedir?",
+      excerpt: "git ya da kal",
+      category: "Git (VCS)",
+      date: "2022-04-16",
+      author: "sudosuzroot",
+      readTime: "En az 13 dakika okuma süresinde"
+    },
+    {
+      id: "25",
+      title: "Pull Request Nedir? Nasıl Atılır?",
+      excerpt: "pull, push",
+      category: "Git (VCS)",
+      date: "2023-01-23",
+      author: "sudosuzroot",
+      readTime: "En az 3 dakika okuma süresinde"
+    },
   ]);
 
 

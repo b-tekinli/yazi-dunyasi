@@ -200,6 +200,22 @@ const BlogPost = () => {
       readTime: "4 dakika",
       file: "kubernetes.md"
     },
+    "24": {
+      title: "GIT Nedir?",
+      category: "Git (VCS)",
+      date: "2022-04-16",
+      author: "sudosuzroot",
+      readTime: "13 dakika",
+      file: "git_nedir.md"
+    },
+    "25": {
+      title: "Pull Request Nedir? Nasıl Atılır?",
+      category: "Git (VCS)",
+      date: "2023-01-23",
+      author: "sudosuzroot",
+      readTime: "3 dakika",
+      file: "pull_request_nedir.md"
+    },
   };
 
   const post = posts[id as keyof typeof posts];
