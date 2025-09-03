@@ -244,6 +244,33 @@ const Index = () => {
       author: "sudosuzroot",
       readTime: "En az 3 dakika okuma süresinde"
     },
+    {
+      id: "26",
+      title: "Relational Databases",
+      excerpt: "ilişkiler ve ilişkisel",
+      category: "Database Tech",
+      date: "2024-07-17",
+      author: "sudosuzroot",
+      readTime: "En az 6 dakika okuma süresinde"
+    },
+    {
+      id: "27",
+      title: "NoSQL Databases",
+      excerpt: "SQL'e hayır!",
+      category: "Database Tech",
+      date: "2024-07-18",
+      author: "sudosuzroot",
+      readTime: "En az 7 dakika okuma süresinde"
+    },
+    {
+      id: "28",
+      title: "IOS Listeleme İşlemleri",
+      excerpt: "pickerrr",
+      category: "IOS",
+      date: "2022-12-07",
+      author: "sudosuzroot",
+      readTime: "En az 4 dakika okuma süresinde"
+    },
   ]);
 
 

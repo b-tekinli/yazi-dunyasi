@@ -216,6 +216,30 @@ const BlogPost = () => {
       readTime: "3 dakika",
       file: "pull_request_nedir.md"
     },
+    "26": {
+      title: "Relational Databases",
+      category: "Database Tech",
+      date: "2024-07-17",
+      author: "sudosuzroot",
+      readTime: "6 dakika",
+      file: "relational_databases.md"
+    },
+    "27": {
+      title: "NoSQL Databases",
+      category: "Database Tech",
+      date: "2024-07-18",
+      author: "sudosuzroot",
+      readTime: "7 dakika",
+      file: "nosql_databases.md"
+    },
+    "28": {
+      title: "NoSQL Databases",
+      category: "Database Tech",
+      date: "2022-12-07",
+      author: "sudosuzroot",
+      readTime: "4 dakika",
+      file: "ios_listeleme_islemleri.md"
+    },
   };
 
   const post = posts[id as keyof typeof posts];
