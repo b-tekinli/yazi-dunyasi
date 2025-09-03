@@ -233,12 +233,36 @@ const BlogPost = () => {
       file: "nosql_databases.md"
     },
     "28": {
-      title: "NoSQL Databases",
-      category: "Database Tech",
+      title: "IOS Listeleme İşlemleri",
+      category: "IOS",
       date: "2022-12-07",
       author: "sudosuzroot",
       readTime: "4 dakika",
       file: "ios_listeleme_islemleri.md"
+    },
+    "29": {
+      title: "IOS Listeleme İşlemleri",
+      category: "IOS",
+      date: "2022-11-30",
+      author: "sudosuzroot",
+      readTime: "4 dakika",
+      file: "ios_widgets.md"
+    },
+    "30": {
+      title: "IOS Listeleme İşlemleri",
+      category: "IOS",
+      date: "2022-11-22",
+      author: "sudosuzroot",
+      readTime: "6 dakika",
+      file: "ios_mimarisi_ve_calisma_yapisi.md"
+    },
+    "31": {
+      title: "Swift’te Lazy Özelliği",
+      category: "IOS",
+      date: "2022-11-22",
+      author: "sudosuzroot",
+      readTime: "2 dakika",
+      file: "swiftte_lazy_ozelligi.md"
     },
   };
 

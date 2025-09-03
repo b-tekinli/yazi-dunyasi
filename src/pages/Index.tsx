@@ -271,6 +271,33 @@ const Index = () => {
       author: "sudosuzroot",
       readTime: "En az 4 dakika okuma süresinde"
     },
+    {
+      id: "29",
+      title: "IOS Widgets",
+      excerpt: "müfettiş widget",
+      category: "IOS",
+      date: "2022-11-30",
+      author: "sudosuzroot",
+      readTime: "En az 4 dakika okuma süresinde"
+    },
+    {
+      id: "30",
+      title: "IOS Mimarisi ve Çalışma Yapısı",
+      excerpt: "ios architect",
+      category: "IOS",
+      date: "2022-11-22",
+      author: "sudosuzroot",
+      readTime: "En az 6 dakika okuma süresinde"
+    },
+    {
+      id: "31",
+      title: "Swift’te Lazy Özelliği",
+      excerpt: "tembellik..",
+      category: "IOS",
+      date: "2022-11-22",
+      author: "sudosuzroot",
+      readTime: "En az 2 dakika okuma süresinde"
+    },
   ]);
 
 
