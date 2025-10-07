@@ -79,33 +79,33 @@ Aslında burada kullanıcı tekrar tekrar giriş yapmasın, onun bilgileri her g
 
 Cookie’ler, kullanıcı tarayıcılarında küçük veri parçaları olarak saklanır demiştik. Bunun yanı sıra çeşitli bayraklarla (flags) kontrol edilebilirler. Bu bayraklar, cookie’lerin erişilebilirliğini ve geçerlilik süresini belirler. Şimdi 7 tane bayrağı örnek vererek inceleyelim.
 
-**_1\. HTTPOnly_** <br>
+**_1\. HTTPOnly_**
 Bir cookie’yi JS gibi istemci tarafı dillerden erişilemez hale getirir. Bu da özellikle XSS saldırılarına karşı ek bir güvenlik katmanı sağlar. Yani, eğer bir cookie’de `HTTPOnly` bayrağı varsa, bu cookie’ye sadece HTTP ya da HTTPS protokolleri üzerinden erişilebilir. JS ile bu cookie’yi okumak ya da değiştirmek mümkün olmaz.
 
     set-cookie: sessionId=bt12; HttpOnly
 
 Bu örnekte, `sessionId` isimli cookie’ye JS tarafından erişilemez. Bu da onu daha güvenli hale getirmiş olur.
 
-**_2\. Secure_** <br>
+**_2\. Secure_**
 Cookie’nin sadece HTTPS bağlantıları üzerinden gönderilmesini sağlar. Bu da, cookie’nin şifrelenmiş bir kanal üzerinden iletilmesini zorunlu kılmış olur ve iletim sırasında verilerin kötü niyetli kişilerin eline geçme riskini azaltır.
 
     set-cookie: sessionId=bt12; Secure
 
-**_3\. Max-Age_** <br>
+**_3\. Max-Age_**
 Cookie’nin ne kadar süre boyunca geçerli olacağını saniye cinsinden belirtir. Bu süre dolduğunda, cookie otomatik olarak tarayıcıdan silinir. Bundan bir sonra göreceğimiz `Expires` bayrağı da benzer bir iş yapıyor fakat `Max-Age` daha hassas bir kontrol sağlıyor diyebilirim.
 
     set-cookie: sessionId=bt12; Max-Age=3600
 
 Mesela bu örnekteki cookie, 1 saat (3600 saniye) boyunca geçerli olacak anlamına geliyor.
 
-**_4\. Expires_** <br>
+**_4\. Expires_**
 Cookie’nin geçerlilik süresini belirli bir tarihe kadar uzatır. Belirtilen tarih geldiğinde, cookie geçersiz hale gelir. `Max-Age` ile benzer demiştik fakat aşağıdaki örnekte görüleceği gibi tarih belirlemize olanak tanır.
 
     set\-cookie: sessionId\=bt12; Expires\=Mon, 12 Dec 2024 12:00:00 GMT
 
 Bu cookie, 12 Aralık 2024 saat 12:00'de geçerliliğini yitirecektir.
 
-**_5\. SameSite_** <br>
+**_5\. SameSite_**
 Cookie’nin 3. taraf isteklerde (cross-site requests) nasıl davranacağını belirler. CSRF (Cross-Site Request Forgery) gibi saldırılara karşı ek koruma sağlar. Bunların yanı sıra `SameSite` 3 farklı modda ayarlanabilir:
 
 *   **Strict:** Cookie sadece aynı site üzerinde yapılan isteklerde gönderilir.
@@ -116,12 +116,12 @@ Cookie’nin 3. taraf isteklerde (cross-site requests) nasıl davranacağını b
 
 Mesela bu örnekte, `SameSite` flagi ekledik ve `Strict` modunda davranmasını istedik. Bu da sadece kullanıcı aynı site içinde gezindiğinde gönderilecektir.
 
-**_6\. Domain_** <br>
+**_6\. Domain_**
 Cookie’nin hangi alan adı (domain) için geçerli olduğunu belirler. Yani cookie’nin belirtilen alan adındaki alt alan adlarında da her sayfaya gönderilmesine olanak tanır.
 
     set-cookie: sessionId=bt12; Domain=btekinli.me
 
-**_7\. Path_** <br>
+**_7\. Path_**
 Cookie’nin hangi URL yolu için geçerli olacağını belirtir. Bu da, cookie’nin yalnızca belirli bir dizindeki sayfalara gönderilmesini sağlar.
 
     set-cookie: sessionId=bt12; Path=/account
@@ -181,17 +181,17 @@ Web sunucusunun tarayıcıya geri gönderdiği yanıtta yer alan ek bilgilerdir.
 Öncelikle yukarıdaki fotoğrafta `200 OK` ifadesine bakalım. Bu ifade HTTP durum kodudur. Durum kodu sunucudan bize dönen cevapta yer alan başarılı, başarısız, hatalı olan durumları bildirir.
 
 **HTTP Status Code (HTTP Durum Kodları)**  
-_100–199:_ Information Response (Bilgi Yabıtı)  
-_200–299:_ Success (Başarılı)  
+*_100–199:_* Information Response (Bilgi Yabıtı)  
+*_200–299:_* Success (Başarılı)  
 _300–399:_ Redirection (Yönlendirme)  
-_400–499:_ Client Errors (İstemci/Kullanıcı Hataları)  
-_500–599:_ Server Errors (Sunucu Hataları)
+*_400–499:_* Client Errors (İstemci/Kullanıcı Hataları)  
+*_500–599:_* Server Errors (Sunucu Hataları)
 
 **_Bazı durum kodları:_**  
-\- _200 OK:_ İçerik başarılı şekilde gönderiliyor.  
-\- _304 Not Modified:_ Tarayıcıya, önbelliğinde depolanan kaynakların değişmediğini belirten durum kodudur.  
-\- _404 Not Found:_ İstenilen kaynak bulunamadı.  
-\- _500 Internal Server Error:_ Sunucuda hata meydana geldi.
+\- *_200 OK:_* İçerik başarılı şekilde gönderiliyor.  
+\- *_304 Not Modified:_* Tarayıcıya, önbelliğinde depolanan kaynakların değişmediğini belirten durum kodudur.  
+\- *_404 Not Found:_* İstenilen kaynak bulunamadı.  
+\- *_500 Internal Server Error:_* Sunucuda hata meydana geldi.
 
 **_HTTP Response Headers içindeki bazı bilgiler:_**
 
