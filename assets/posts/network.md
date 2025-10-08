@@ -183,7 +183,7 @@ Yukarıdaki resimde arp tablosu görebiliriz. Eğer MAC adresi (Physical Adress)
 
 ![](https://cdn-images-1.medium.com/max/800/1*6PDel17X8cvr8VK9Shq2YQ.png)
 
-**IP_:_** Internet Protocol açılımı ile karşımıza çıkar ve internet üzerinde cihazların birbirleriyle iletişim kurabilmek ve veri alışverişi yapabilmek için kullandığı ağ kimliğidir. 3. katman yani Network katmanı protokolüdür. Yönetici tarafından değiştirilebilir. Connectionless (bağlantısız) bir protokoldür. Paketin hedefe ulaşmasını garanti etmez. Evimizde yani local’de kullandığımız IP adresleri ile internete çıkarken kullandığımız IP adresleri farklıdır. Bunlar **_Private (Local)_** ve **_Public (External)_** olarak 2'ye ayrılır.
+**IP:** Internet Protocol açılımı ile karşımıza çıkar ve internet üzerinde cihazların birbirleriyle iletişim kurabilmek ve veri alışverişi yapabilmek için kullandığı ağ kimliğidir. 3. katman yani Network katmanı protokolüdür. Yönetici tarafından değiştirilebilir. Connectionless (bağlantısız) bir protokoldür. Paketin hedefe ulaşmasını garanti etmez. Evimizde yani local’de kullandığımız IP adresleri ile internete çıkarken kullandığımız IP adresleri farklıdır. Bunlar **_Private (Local)_** ve **_Public (External)_** olarak 2'ye ayrılır.
 
 **Private (Local) IP Adresi**ne örnek verelim;  
 Evimizdeki modeme kablolu ya da kablosuz bağlanan her bir cihaz için modem tarafından otomatik bir IP adresi tanımlanır. Her cihaza farklı IP atanmasının amacı bağlanan cihazları ayırt edebilmektir. Bu IP adreslerine de _Local IP_ ya da _Private IP_ deriz. İnternete çıkarken bu IP’leri kullanmayız.
@@ -231,7 +231,7 @@ B sınıfı için konuşacak olursak, 128 ile 191 aralığında olduğunu görü
 
 C sınıfına gelecek olursak, 192 ile 223 aralığında olduğunu görüyoruz ve kullanıcı sayısı oldukça az. Bu da, daha küçük bir network’ler için kullanıldığını gösteriyor. Hatta evlerimizde kullandığımız IP adresleri de C sınıfıdır.
 
-**Subnet Mask** <br>
+**Subnet Mask**
 Şimdi ise subnet mask’in ne olduğuna bakalım. Subnet Mask Türkçe’ye Alt Ağ Maskesi olarak çevrilir. Bir cihazın hangi network’te olduğunu belirler. Yani bir IP adresinin hangi bölümünün network, hangi bölümünün host olduğunu belirler.
 
 ![](https://cdn-images-1.medium.com/max/800/1*43mQHzSlaSoL7E4bYuPyCQ.png)
@@ -278,7 +278,7 @@ Gerçek hayattan örnek verelim. Mesela evimizde kendi odamız ve salon arasınd
 
 Karşımızdaki ya da hedef olarak aldığımız bilgisayarın ayakta olup olmadığını anlamamızı sağlayan istektir.
 
-ping 192.168.1.1
+`ping 192.168.1.1`
 
 Bu komut ile karşı bilgisayara ICMP (Internet Control Message Protocol) paketleri göndererek karşımızda birinin olup olmadığı kontrolünü yapabiliyoruz.
 
