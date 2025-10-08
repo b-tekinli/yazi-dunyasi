@@ -298,6 +298,15 @@ const Index = () => {
       author: "sudosuzroot",
       readTime: "En az 2 dakika okuma süresinde"
     },
+    {
+      id: "32",
+      title: "Malware Detection Projesi",
+      excerpt: "virüsleri tespit ett",
+      category: "Siber Güvenlik",
+      date: "2024-09-08",
+      author: "sudosuzroot",
+      readTime: "En az 9 dakika okuma süresinde"
+    },
   ]);
 
 

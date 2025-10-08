@@ -264,6 +264,14 @@ const BlogPost = () => {
       readTime: "2 dakika",
       file: "swiftte_lazy_ozelligi.md"
     },
+    "32": {
+      title: "Malware Detection Projesi",
+      category: "Siber Güvenlik",
+      date: "2024-09-08",
+      author: "sudosuzroot",
+      readTime: "9 dakika",
+      file: "malware_detection_project.md"
+    },
   };
 
   const post = posts[id as keyof typeof posts];
